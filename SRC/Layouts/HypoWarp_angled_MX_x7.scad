@@ -95,8 +95,8 @@ tenting     = [0,15,0]; // tenting for enclusoure
 plateHeight = 35;       // height adjustment for enclusure 
 
 //-----     Trackball Parameters
-trackR      = 37;        //trackball raidus  M570: 37mm, Ergo and Kennington: 40mm
-trackOrigin = [2,-25,7]; //trackball origin
+trackR      = 30;        //trackball raidus  M570: 37mm, Ergo and Kennington: 40mm
+trackOrigin = [-35,15,7]; //trackball origin
 trackTilt   = [0,0,0];    //angle for tilting trackpoint support and PCB
 
 //-----     Rotary Encoder
