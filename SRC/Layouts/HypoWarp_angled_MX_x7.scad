@@ -95,8 +95,8 @@ tenting     = [0,15,0]; // tenting for enclusoure
 plateHeight = 35;       // height adjustment for enclusure 
 
 //-----     Trackball Parameters
-trackR      = 30;        //trackball raidus  M570: 37mm, Ergo and Kennington: 40mm
-trackOrigin = [-35,15,7]; //trackball origin
+trackR      = 27;        //trackball raidus  M570: 37mm, Ergo and Kennington: 40mm
+trackOrigin = [-35,15,0]; //trackball origin
 trackTilt   = [0,0,0];    //angle for tilting trackpoint support and PCB
 
 //-----     Rotary Encoder
@@ -286,6 +286,10 @@ Sborder = //color "Crimson"
   [[C2, RowEnds[C2], false,FRONT, [0,0,0],    [1,RScale,1]], //fill gap between general border and Bottom Enclosure near C3
    [C3, RowEnds[C3], false,FRONT, [LEFT,0,0], [1,RScale,1]] ], 
    
+  [[C1, RowEnds[C1], false,FRONT, [LEFT,0,0], [1,RScale,1]],
+   [C2, RowEnds[C2], false,FRONT, [LEFT,0,0], [1,RScale,1]],
+   [C3, RowEnds[C3], false,FRONT, [LEFT,0,0], [1,RScale,1]]],
+
   [[C3, RowEnds[C3], false,FRONT, [0,0,0], [1,RScale,1]]],
 
   [[C3, RowEnds[C3], false,FRONT, [RIGHT,0,0], [1,RScale,1]],
