@@ -135,8 +135,8 @@ JackAng     = [0,0,180];
 //-------  LAYOUT parameters
 //column loop setter
 CStart   = C1;  // Set column to begin looping for the build
-CEnd     = C5;  // Set column to end for the build
-TStart   = T1;  // Set Thumb Cluster Colum to begin
+CEnd     = C6;  // Set column to end for the build
+TStart   = T0;  // Set Thumb Cluster Colum to begin
 TEnd     = T2;  // Set Thumb Cluster to end 
 colRange = concat([for (i = [CStart:CEnd]) i], [for (i = [TStart:TEnd]) i]); //columnar for loop range 
   

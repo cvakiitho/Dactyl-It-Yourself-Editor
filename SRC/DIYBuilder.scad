@@ -78,7 +78,7 @@ module BuildTopPlate(Keyhole = false, Enclosure = true, Trackball = false, Thumb
           if (Border == true )BuildTopEnclosure(bBotScale = RScale); //for easier debugging
   //      if (PrettyBorder == true)BuildPrettyTransition(bBotScale = RScale); // it never worked well on edge cases which is 99% of my build
           if (CustomBorder == true){color("Crimson")BuildCustomBorder(struct = Sborder);}
-          if (ThumbJoint == true)color("Salmon")BuildCustomBorder(struct = TCJoints);       
+          if (ThumbJoint == true)color("Blue")BuildCustomBorder(struct = TCJoints);       
           if (Trackball == true){
             color("Yellow")BuildTrackBorder(struct = TBborder);
             translate(trackOrigin)rotate(trackTilt)TrackBall();
@@ -86,7 +86,7 @@ module BuildTopPlate(Keyhole = false, Enclosure = true, Trackball = false, Thumb
         }  
       }
       //enclosure 
-      if(Enclosure == true)color("lightpink")BuildBottomEnclosure(struct = Eborder, Mount = true, JackType = "TRRS", MCUType = true);
+      if(Enclosure == true)color("green")BuildBottomEnclosure(struct = Eborder, Mount = true, JackType = "TRRS", MCUType = true);
     }//end build union
     //CUTS
     // Remove inter-columnar artifacts from borders and web joints

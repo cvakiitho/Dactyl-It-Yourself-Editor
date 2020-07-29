@@ -54,15 +54,15 @@ DSA = 1;
 SA  = 2;
 MT3 = 3;
 //-----   Grid parameters
-unit           = 18.25;  // 
-Tol            = 0.001;  // tolance
-HullThickness  = 0.0001; // modulation hull thickness
-TopHeight      = 0;      // Reference Origin of the keyswitch 
+unit           = 19.45;  // 
+Tol            = 0.01;  // tolance
+HullThickness  = 0.01; // modulation hull thickness
+TopHeight      = 100;      // Reference Origin of the keyswitch 
 BottomHeight   = 3.6;    // height adjustment used for R0 keys for cherry types
 
 SwitchWidth    = 15.6;   // switch width 
-PlateOffsets   = 2.5;    // additional pading on width of plates
-PlateOffsetsY  = 2.5;    // additional padding on lenght of plates
+PlateOffsets   = 3.5;    // additional pading on width of plates
+PlateOffsetsY  = 3.5;    // additional padding on lenght of plates
 PlateThickness = 3.5;    // switch plate thickness
 PlateDim       = [SwitchWidth+PlateOffsets, SwitchWidth+PlateOffsetsY, PlateThickness];
 PlateHeight    = 6.6;    //
@@ -70,11 +70,11 @@ SwitchBottom   = 4.8;    // from plate
 WebThickness   = PlateDim[0] - 2; // inter column hull inward offsets, 0 thickness results in poor plate thickness
 
 //-----    Enclusure and plate parameter
-RScale       = 2;        //Rim bottom scaling
-EScale       = 2.5;      //Enclosure bottom scaling
+RScale       = 2.2;        //Rim bottom scaling
+EScale       = 2.0;      //Enclosure bottom scaling
 PBuffer      = 0;       //additional Plate thickness
 BorderAlign  = BOTTOM;           // high pro or flushed
-Bthickness   = PlateDim[0] - 2;  //thickness of the enclosure rim 
+Bthickness   = PlateDim[0] - 4;  //thickness of the enclosure rim 
 BFrontHeight = 3;                    //Height of frontside of the enclosure rim 
 BBackHeight  = 3;                    //Height of Backside of the enclosure rim 
 TFrontHeight = 0;
@@ -92,7 +92,7 @@ ThumbOffset = .2;
 
 //-----     Tenting Parameters
 tenting     = [0,15,0]; // tenting for enclusoure  
-plateHeight = 35;       // height adjustment for enclusure 
+plateHeight = 40;       // height adjustment for enclusure 
 
 //-----     Trackball Parameters
 trackR      = 27;        //trackball raidus  M570: 37mm, Ergo and Kennington: 40mm
@@ -108,7 +108,7 @@ RER         = 20;
 //
 bpThickness =  3; //Bottom Plate Thickness
 midHeight   = -7; // used to generate hull between mount and enclosure  
-mountScrew  = [[59.5,-23.5,0],[-36,48,0],[25,58,0],[75,25,0],[-40,-15,0]]; // mount location 
+mountScrew  = [[59.5,-23.5,0],[-36,65,0],[25,70,0],[100,35,0],[-54,-10,0]]; // mount location 
 mountHull   = [26,8,11,13,2]; //refer to ebordes id to bind to to mountScrew location
 mountDia    = 5; //mm
 screwholeDia= 3; //mm 
@@ -133,14 +133,14 @@ colRange = concat([for (i = [CStart:CEnd]) i], [for (i = [TStart:TEnd]) i]); //c
   
 //structure to hold column origin transformation
 ColumnOrigin = [//[translation vec]       [Global Rot]    [Local Rot]
-                [[  -54, -unit*3/4,   1], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 1 
-                [[  -36,-unit*7/16,  -2], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 2 
-                [[  -18,   -unit/4,  -2], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 3 
+                [[  -54, -unit*3/8,   1], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 1 
+                [[  -unit*2,-unit*3/8,  -2], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 2 
+                [[  -unit,   -unit/8,  -2], [ 0,   0,   0], [ 0, 90,  0]], //INDEX 3 
                 [[    0,    unit/8,  -5], [ 0,   0,  -3], [ 0, 90,  0]], //MIDDLE 
-                [[   19,   -unit/8,   0], [ 0,   0,  -7], [ 0, 90,  0]], //RING 
-                [[ 39.0, -unit*5/8,   8], [ 0,   5, -15], [ 0, 90,  0]], //PINKY 1 
-                [[ 56.0, -unit*5/8,  12], [ 0,  10, -15], [ 0, 90,  0]], //PINKY 2 
-                [[ 72.0, -unit*5/8,  21], [ 0,  17.5, -15], [ 5, 90,  0]], //PINKY 3                 
+                [[   unit+1,   -unit/8,   0], [ 0,   0,  -7], [ 0, 90,  0]], //RING 
+                [[ unit*2+2, -unit*3/8,   8], [ 0,   5, -15], [ 0, 90,  0]], //PINKY 1 
+                [[ unit*3+1, -unit*3/8,  12], [ 0,  10, -15], [ 0, 90,  0]], //PINKY 2 
+                [[ unit*4, -unit*3/8,  21], [ 0,  17.5, -15], [ 5, 90,  0]], //PINKY 3                 
                 [[  -63,       -23, -23], [ 0,   0,  10], [-5, 95,  0]], //Thumb Outer 
                 [[  -46,       -22, -23], [ 0,   0,   0], [ 0, 90,-60]], //Thumb OuterMid
                 [[  -46,       -22, -23], [ 0,   0,   0], [ 0, 90,-60]], //Thumb Midlde
@@ -149,7 +149,7 @@ ColumnOrigin = [//[translation vec]       [Global Rot]    [Local Rot]
                ];
 
  //ThumbShift  = [[2,-12, 0],[ 0, -5, -5],[ 0, 0, 0]]; //global transform for thumb cluster to jog as whole rather than editing origin
-ThumbShift  = [[8,-16, 15],[ 0, -5, -3],[ 0, 0, 0]]; //global transform for thumb cluster to jog as whole rather than editing origin
+ThumbShift  = [[-10,-16, 5],[ 0, -5, -3],[ 0, 0, 0]]; //global transform for thumb cluster to jog as whole rather than editing origin
 
 //-------  and adjustment parameters 
 
@@ -165,15 +165,15 @@ RowTrans    = [[ -.18, -.18, -.18, -.18, -.18, -.55, -.55, -.55, -1.0,-1.25,-1.2
                [ 2.90, 2.90, 2.90, 2.90, 2.90, 2.55, 2.55, 2.55,    0, 1.75,    0,     0,     0], //R3s
                [ 3.80, 3.80, 3.80, 3.80, 3.80,    1,  .83,    1,    0,    0,    0,     0,     0], //R4
                [ 4.45, 4.45, 4.45, 4.45, 4.45,    4,   -4,    4,    0,    0,    0,     0,     0]  //R5           
-              ]*unit; 
+              ]*unit*1.06; 
 
 ColTrans    = [[    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0], //R0
-               [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   .2,     0,     0], //R1s
-               [    0,    0,    0,    0,    0,    0,    0,    0,    0,  -.4,   .8,     0,     0], //R2s 
+               [    0,    0,    0,    0,    0,   .0,    0,    0,    0,   .0,   .21,    0,   1.1], //R1s
+               [    0,    0,    0,    0,    0,    0,    0,    0, -.30,  -.42,   .8,    0,   .25], //R2s 
                [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0], //R3s
                [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0], //R4
                [    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     0,     0]  //R5           
-              ]*unit; 
+              ]*unit*1.10; 
               
 Pitch       = [[   25,   25,   15,   15,   15,   25,   25,   25,   10,   10,  -10,     0,     0],  //R0
                [   15,   15,   15,   15,   15,   15,   15,   15,    0,   20,  -35,     0,     0],  //R1s
@@ -316,8 +316,6 @@ Sborder = //color "Crimson"
   [[C3, RowInits[C3], false,BACK, [0,0,0],    [1,RScale,1]],
    [C4, RowInits[C4], false,BACK, [LEFT,0,0], [1,RScale,1]]], 
   
-  [[C4, RowInits[C4], false,BACK, [0,0,0],    [1,RScale,1]],
-   [C5, RowInits[C5], false,BACK, [LEFT,0,0], [1,RScale,1]]], 
  
   [[C5, RowInits[C5], false,BACK, [RIGHT,0,0], [1,RScale,1]],
    [C6, RowInits[C6], false,BACK, [LEFT,0,0],  [1,RScale,1]]], 
@@ -327,7 +325,7 @@ Sborder = //color "Crimson"
  ];
 
 //define Spical border Hull to join Column and Thumb Cluster 
-TCJoints = //color "Salmon"
+TCJoints = //olor "Salmon"
  [
     [[C3, RowInits[C3], false, BACK,    [LEFT,0,0],         [RScale,1,1]], 
      [T2,          R2,  true,  RIGHT,   [LEFT,BACK,BOTTOM], [1,1,1]],  
@@ -358,7 +356,7 @@ TCJoints = //color "Salmon"
 */
 
 //TODO simplify scale call 
-Eborder = 
+Eborder = //color green
   [/* [[Col, Row, len = true, Jog direction1, HullFace, Scale], ...], //top surface
       [[Col, Row, len = true, Jog direction1, HullFace, Scale], ...], //projected bottom surface
       [hullface], //for hulling to trackball mount. keep [0,0,0]
@@ -384,7 +382,7 @@ Eborder =
        [T1, R2, true, LEFT,              [0,FRONT,BOTTOM], [1,RScale,1]], 
        [T1, R2, false,FRONT,             [LEFT,0,BOTTOM], [1,RScale,1]]],
       [[T0, R2, false,FRONT+ThumbOffset, [LEFT,0,BOTTOM],  [1,EScale,1]],
-//       [T1, R2, false,FRONT+ThumbOffset, [LEFT,0,BOTTOM],    [EScale,1,1]],
+       [T1, R2, false,FRONT+ThumbOffset, [LEFT,0,BOTTOM],    [EScale,1,1]],
        [C1, R1, true, LEFT+LeftOffset,   [0,BACK,BOTTOM],    [EScale,1,1]]],
       [0,0,0],
       false
@@ -545,7 +543,7 @@ Eborder =
       [[C4, R0, false,BACK+BackOffset,     [LEFT,0,BOTTOM], [1,EScale,1]],
        [C5, R1, false,BACK+BackOffset,     [LEFT,0,BOTTOM], [1,EScale,1]]],
       [0,0,0],
-      false
+      true
     ],   
     [//C5R1 BACK 
       [[C5, R1, false,BACK,                [0,0,BOTTOM], [1,RScale,1]]],
